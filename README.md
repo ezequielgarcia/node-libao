@@ -2,7 +2,7 @@ node-ao
 ============
 ### Node.js libao bindings, output PCM data to the speakers.
 
-A Writable stream instance that accepts [PCM audio][pcm] data and outputs it
+A Writable stream instance that accepts PCM audio data and outputs it
 to the speakers. The output is backed by `libao`'s audio output modules, which
 in turn use any number of audio backends commonly found on Operating Systems
 these days.
