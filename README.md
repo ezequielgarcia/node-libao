@@ -21,7 +21,7 @@ A few examples
 --------------
 
 ``` javascript
-var libao = require('ao');
+var libao = require('libao');
 
 // Create the libao instance
 var ao = new libao({
