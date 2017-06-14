@@ -1,4 +1,4 @@
-node-ao
+node-libao
 ============
 ### Node.js libao bindings, output PCM data to the speakers.
 

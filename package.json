@@ -24,12 +24,12 @@
   "author": "Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ezequielgarcia/node-ao.git"
+    "url": "git://github.com/ezequielgarcia/node-libao.git"
   },
   "bugs": {
-    "url": "https://github.com/ezequielgarcia/node-ao/issues"
+    "url": "https://github.com/ezequielgarcia/node-libao/issues"
   },
-  "homepage": "https://github.com/ezequielgarcia/node-ao",
+  "homepage": "https://github.com/ezequielgarcia/node-libao",
   "main": "./index.js",
   "dependencies": {
     "bindings": "^1.2.1",
