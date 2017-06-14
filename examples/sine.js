@@ -5,7 +5,7 @@
  */
 
 var Readable = require('stream').Readable;
-var Ao = require('../');
+var libao = require('../');
 
 // node v0.8.x compat
 if (!Readable) Readable = require('readable-stream/readable');
@@ -27,7 +27,7 @@ sine.samplesGenerated = 0;
 sine._read = read;
 
 // create a SineWaveGenerator instance and pipe it to the speaker
-sine.pipe(new Ao());
+sine.pipe(new libao());
 
 // the Readable "_read()" callback function
 function read (n) {

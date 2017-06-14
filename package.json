@@ -1,8 +1,8 @@
 {
-  "name": "ao",
+  "name": "libao",
   "description": "Binding to libao",
   "keywords": [
-    "ao",
+    "libao",
     "pcm",
     "audio",
     "sound",

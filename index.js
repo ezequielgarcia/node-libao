@@ -13,18 +13,18 @@ var Writable = require('readable-stream/writable');
  * Module exports.
  */
 
-exports = module.exports = Ao;
+exports = module.exports = libao;
 
 /**
- * The `Ao` class accepts raw PCM data written to it, and then sends that data
+ * The `libao` class accepts raw PCM data written to it, and then sends that data
  * to the default output device of the OS.
  *
  * @param {Object} opts options object
  * @api public
  */
 
-function Ao (opts) {
-  if (!(this instanceof Ao)) return new Ao(opts);
+function libao (opts) {
+  if (!(this instanceof libao)) return new libao(opts);
 
   // default lwm and hwm to 0
   if (!opts) opts = {};
@@ -47,7 +47,7 @@ function Ao (opts) {
   this.on('pipe', this._pipe);
   this.on('unpipe', this._unpipe);
 }
-inherits(Ao, Writable);
+inherits(libao, Writable);
 
 /**
  * Calls the audio backend's `open()` function, and then emits an "open" event.
@@ -55,7 +55,7 @@ inherits(Ao, Writable);
  * @api private
  */
 
-Ao.prototype._open = function () {
+libao.prototype._open = function () {
   debug('open()');
   if (this._audio_handle) {
     throw new Error('_open() called more than once!');
@@ -91,7 +91,7 @@ Ao.prototype._open = function () {
  * @api private
  */
 
-Ao.prototype._format = function (opts) {
+libao.prototype._format = function (opts) {
   debug('format(object keys = %o)', Object.keys(opts));
   if (opts.channels) {
     debug('setting %o: %o', 'channels', opts.channels);
@@ -116,7 +116,7 @@ Ao.prototype._format = function (opts) {
  * @api private
  */
 
-Ao.prototype._write = function (chunk, encoding, done) {
+libao.prototype._write = function (chunk, encoding, done) {
   debug('_write() (%o bytes)', chunk.length);
 
   if (this._closed) {
@@ -127,7 +127,7 @@ Ao.prototype._write = function (chunk, encoding, done) {
   if (!handle) {
     // this is the first time write() is being called; need to _open()
     try {
-      handle = Ao.prototype._open.call(this);
+      handle = libao.prototype._open.call(this);
     } catch (e) {
       return done(e);
     }
@@ -156,13 +156,13 @@ Ao.prototype._write = function (chunk, encoding, done) {
  * @api private
  */
 
-Ao.prototype._pipe = function (source) {
+libao.prototype._pipe = function (source) {
   debug('_pipe()');
   this._format(source);
   source.once('format', this._format);
 };
 
-Ao.prototype._unpipe = function (source) {
+libao.prototype._unpipe = function (source) {
   debug('_unpipe()');
   source.removeListener('format', this._format);
 };
@@ -173,7 +173,7 @@ Ao.prototype._unpipe = function (source) {
  * @api public
  */
 
-Ao.prototype.close = function () {
+libao.prototype.close = function () {
   debug('close()');
   if (this._closed) return debug('already closed...');
 

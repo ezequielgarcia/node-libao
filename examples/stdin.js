@@ -3,7 +3,7 @@
  * Pipe data to stdin and it will be played through your speakers.
  */
 
-var Ao = require('../');
+var libao = require('../');
 
-var ao = new Ao();
+var ao = new libao();
 process.stdin.pipe(ao);
