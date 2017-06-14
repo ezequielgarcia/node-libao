@@ -1,0 +1,40 @@
+{
+  "name": "ao",
+  "description": "Binding to libao",
+  "keywords": [
+    "ao",
+    "pcm",
+    "audio",
+    "sound",
+    "music",
+    "output",
+    "speaker",
+    "headphone",
+    "alsa",
+    "coreaudio",
+    "openal",
+    "sdl",
+    "portaudio",
+    "jack",
+    "oss",
+    "pulse"
+  ],
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ezequielgarcia/node-ao.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ezequielgarcia/node-ao/issues"
+  },
+  "homepage": "https://github.com/ezequielgarcia/node-ao",
+  "main": "./index.js",
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "debug": "^2.2.0",
+    "nan": "^2.2.0",
+    "readable-stream": "^2.0.5"
+  }
+}
