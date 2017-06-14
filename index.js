@@ -4,10 +4,12 @@
  */
 
 var os = require('os');
-var debug = require('debug')('ao');
-var binding = require('bindings')('binding');
+process.dlopen(module, 'build/Release/binding.node', os.constants.dlopen.RTLD_NOW | os.constants.dlopen.RTLD_GLOBAL)
+var debug = require('debug')('libao');
 var inherits = require('util').inherits;
 var Writable = require('readable-stream/writable');
+
+binding = module.exports
 
 /**
  * Module exports.
