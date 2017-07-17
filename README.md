@@ -17,6 +17,13 @@ Simply compile and install `node-libao` using `npm`:
 $ npm install libao
 ```
 
+Note: you will need to have `libao` included in your path before trying to install `node-libao`
+
+OSX:
+``` bash
+$ brew install libao
+```
+
 A few examples
 --------------
 
