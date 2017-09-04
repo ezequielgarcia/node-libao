@@ -11,17 +11,22 @@ This module is very much based on the awesome [node-speaker][speaker].
 Installation
 ------------
 
-Simply compile and install `node-libao` using `npm`:
+You need `libao` installed on your system before installig `node-libao`.
+
+- Debian
+``` bash
+$ apt-get install libao-dev
+```
+
+- OSX:
+``` bash
+$ brew install libao
+```
+
+Now, simply compile and install `node-libao` using `npm`:
 
 ``` bash
 $ npm install libao
-```
-
-Note: you will need to have `libao` included in your path before trying to install `node-libao`
-
-OSX:
-``` bash
-$ brew install libao
 ```
 
 A few examples
