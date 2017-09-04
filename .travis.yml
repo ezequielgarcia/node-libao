@@ -1,0 +1,24 @@
+sudo: false
+
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+      - libao-dev
+
+language: node_js
+
+node_js:
+  - "4"
+  - "6"
+  - "7"
+  - "8"
+
+install:
+  - PATH="`npm bin`:`npm bin -g`:$PATH"
+  # Install dependencies and build
+  - npm install
