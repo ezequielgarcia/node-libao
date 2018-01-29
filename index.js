@@ -5,7 +5,12 @@
 
 var os = require('os');
 var debug = require('debug')('ao');
-var binding = require('bindings')('binding');
+
+const buildType = process.config.target_defaults.default_configuration
+const bindingPath = require.resolve(`./build/${buildType}/binding`);
+process.dlopen(module, bindingPath,
+               os.constants.dlopen.RTLD_LAZY | os.constants.dlopen.RTLD_GLOBAL);
+
 var inherits = require('util').inherits;
 var Writable = require('readable-stream/writable');
 
@@ -13,7 +18,8 @@ var Writable = require('readable-stream/writable');
  * Module exports.
  */
 
-exports = module.exports = libao;
+binding = module.exports
+exports = module.exports = libao
 
 /**
  * The `libao` class accepts raw PCM data written to it, and then sends that data
